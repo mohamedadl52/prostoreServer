@@ -8,10 +8,11 @@ const app = express();
 
 // Middlewares
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://prostore.onrender.com'], // ضع هنا الدومينات المسموحة
+  origin: ['http://localhost:5173', 'https://prostore2.onrender.com'], // ضع هنا الدومينات المسموحة
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
-}));app.use(express.json());
+}));
+app.use(express.json());
 
 const preferencesRoute = require('./routes/preferences');
 // Connect to MongoDB
