@@ -69,7 +69,8 @@ const token = jwt.sign(
   process.env.JWT_SECRET,
   { expiresIn: "1d" }
 );
-        res.json({ token, user: { id: user._id, name: user.name, email: user.email, phone: user.phone } }); // Added phone
+     console.log(user.role)
+        res.json({ token, user: { id: user._id, name: user.name, email: user.email, phone: user.phone , role : user.role } }); // Added phone
     } catch (err) {
         console.error("err"); // Log the error for debugging
         res.status(500).send("خطأ في السيرفر");
