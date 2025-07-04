@@ -30,6 +30,7 @@ app.get('/', (req, res) => {
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/admin', require('./routes/admin'));
 app.use('/api/preferences', preferencesRoute);
+app.use('/api/starlink', require('./routes/starlink'));
 
 // Start Server
 const PORT = 8081;
