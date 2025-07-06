@@ -3,9 +3,12 @@ const router = express.Router();
 const StarlinkOrder = require('../models/StarlinkIssue');
 const  verifyToken  = require('../middleware/auth'); // ✅ الطريقة الصحيحة
 
+
+
 // POST: submit starlink issue
-router.post('/submit-issue', verifyToken ,  async (req, res) => {
+router.post('/submit-issue' ,  async (req, res) => {
   try {
+    console.log("🚀 /api/starlink/submit-issue - req.body:", req.body);
     const issue = new StarlinkOrder(req.body);
     await issue.save();
     res.status(201).json({ message: "Issue submitted successfully", issue });

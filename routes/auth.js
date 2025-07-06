@@ -9,6 +9,7 @@ const verifyToken = require('../middleware/auth'); // تحقق من التوكن
 // تعديل الملف الشخصي
 router.put('/update-profile', verifyToken, async (req, res) => {
   try {
+    console.log('test')
     const { name, email, phone } = req.body;
     const userId = req.user.id;
 

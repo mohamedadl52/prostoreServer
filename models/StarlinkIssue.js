@@ -16,11 +16,16 @@ const starlinkIssueSchema = new mongoose.Schema({
   kitNumber: String,
   starlinkID: String,
   password: String,
+   identityImageUrl: String,
+  invoiceImageUrl: String,
+  dishImageUrl: String,
+  visaImageUrl: String,
     status: {
     type: String,
     default: "جاري الفحص", // الحالة الابتدائية
     enum: ['جاري الفحص', 'جاري الطلب', 'مرفوض', 'تم الطلب']
   },
+
 
   details: { type: String, required: true },
   createdAt: { type: Date, default: Date.now }
