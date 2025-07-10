@@ -23,6 +23,7 @@ mongoose.connect(process.env.MONGO_URI, {
   .catch((err) => console.log('❌ DB Error:', err));
 
   
+  const categoryRoutes = require('./routes/categories');
 // Routes
 app.get('/', (req, res) => {
     res.send('Welcome to ProStore API');
@@ -31,6 +32,7 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/api/admin', require('./routes/admin'));
 app.use('/api/preferences', preferencesRoute);
 app.use('/api/starlink', require('./routes/starlink'));
+app.use('/api/categories', categoryRoutes);
 
 // Start Server
 const PORT = 8081;
